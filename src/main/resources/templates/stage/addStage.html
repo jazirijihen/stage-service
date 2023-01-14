@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Ajouter un Stage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="../css/shards.min.css"> -->
+</head>
+
+<body>
+    <div class="container my-5">
+        <h3> Ajouter un Stage</h3>
+        <div class="card">
+            <div class="card-body">
+                <div class="col-md-10">
+                    <form action="#" th:action="@{/stage/add}" th:object="${stage}" method="post">
+                        <div class="row">
+                            <div class="form-group col-md-8">
+                                <label for="sujet" class="col-form-label">Sujet</label> <input type="text" th:field="*{sujet}" class="form-control" id="sujet" placeholder="sujet"> <span th:if="${#fields.hasErrors('description')}" th:errors="*{sujet}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="description" class="col-form-label">description</label> <input type="text" th:field="*{description}" class="form-control" id="description" placeholder="description"> <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="etudiantID" class="col-form-label">etudiantID</label> <input type="number" th:field="*{etudiantID}" class="form-control" id="etudiantID" placeholder="etudiantID"> <span th:if="${#fields.hasErrors('etudiantID')}" th:errors="*{etudiantID}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="encadrantID" class="col-form-label">encadrantID</label> <input type="number" th:field="*{encadrantID}" class="form-control" id="encadrantID" placeholder="encadrantID"> <span th:if="${#fields.hasErrors('encadrantID')}" th:errors="*{encadrantID}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="entreprise" class="col-form-label">entreprise</label> <input type="text" th:field="*{entreprise}" class="form-control" id="entreprise" placeholder="entreprise"> <span th:if="${#fields.hasErrors('entreprise')}" th:errors="*{entreprise}" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="debutDate" class="col-form-label">Date de debut </label> <input type="date" th:field="*{debutDate}" class="form-control" id="debutDate" > <span th:if="${#fields.hasErrors('debutDate')}" th:errors="*{debutDate}" class="text-danger"></span>
+                            </div>
+                             <div class="form-group col-md-8">
+                                <label for="finalDate" class="col-form-label">Date de fin </label> <input type="date" th:field="*{finalDate}"  class="form-control" id="finalDate" > <span th:if="${#fields.hasErrors('finalDate')}" th:errors="*{finalDate}" class="text-danger"></span>
+                            </div>
+                            
+                            
+                            
+                            <div class="col-md-6">
+                                <input type="submit" class="btn btn-primary" value="Ajouter un stage">
+                            </div>
+
+                            <div class="form-group col-md-8"></div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+

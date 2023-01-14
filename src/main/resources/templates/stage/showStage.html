@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Voir Stage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container my-5">
+        <h3 align="center">les detailles d'un stage</h3>
+        <div class="card">
+            <div class="card-body">
+                <div class="col-md-8">
+                    <form action="#"   method="">
+                       
+                            <form action="#"   method="">
+                    		ID: <p th:text="${stage.id}">Id</p>
+	 						Sujet: <p th:text="${stage.sujet}">sujet</p>
+	 						Description: <p th:text="${stage.description}">description</p>
+	 						Entreprise:<p th:text="${stage.entreprise}">entreprise</p>
+	 						Etudiant: <p th:text="${stage.EtudiantName}">EtudiantName</p>
+	 						Encadrant: <p th:text="${stage.EncadrantName}">EncadrantName</p>
+	 						Date de debut: <p th:text="${stage.debutDate}">debutDate</p>
+	 						Date de fin:<p th:text="${stage.finalDate}">finalDate</p>
+	 						
+                            
+                            
+                            <div class="form-group col-md-8">
+                                <a th:href="@{/stage/list}"> <input type="button" class="btn btn-primary" value="retourner à la liste des stages"></a>
+                           
+                            </div>
+                       
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
